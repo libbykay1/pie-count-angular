@@ -17,7 +17,6 @@
         <ng-container
                 *ngIf="orderForm.controls['orderNumber'].touched && orderForm.controls['orderNumber'].errors">
                 <div *ngIf="orderForm.controls['orderNumber'].errors['minlength']" class="error">Order Number must be at least 4 digits</div>
-                <div *ngIf="orderForm.controls['orderNumber'].errors['maxlength']" class="error">Order Number cannot be more than 10 characters</div>
             </ng-container><div class="form-row">
             <label for="order-date">Pickup date: </label>
             <select name="order-date" class="input-style" formControlName="orderDate">

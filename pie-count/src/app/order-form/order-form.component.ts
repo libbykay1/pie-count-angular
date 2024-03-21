@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { PhoneFormControl } from './phone-form-control';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class OrderFormComponent {
 
   orderForm: FormGroup = new FormGroup({
     orderName: new FormControl<string>('', Validators.required),
-    orderNumber: new FormControl<string>('', [Validators.minLength(4), Validators.maxLength(10)]),
+    orderNumber: new PhoneFormControl('', [Validators.minLength(4)]),
     orderDate: new FormControl<string | null>(null, Validators.required),
     orderTimeHour: new FormControl<string | null>(null),
     orderTimeMinute: new FormControl<string>('00')
