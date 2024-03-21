@@ -1,0 +1,113 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: "Imprima", sans-serif;
+    font-weight: 400;
+    font-style: normal;  }
+
+  .font {
+    font-family: "Imprima", sans-serif;
+    font-weight: 400;
+    font-style: normal;  }
+
+    .form-box {
+        border: 2px solid #555;
+        padding: 20px 50px;
+        background-color: #f6ebcf;
+        border-radius: 10px;
+        width: 80%;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 95vh;
+    }
+
+    .container > div {
+        width: 80%;
+
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .yellow-button {
+        width: 100%;
+        max-width: 300px;
+        height: 50px;
+        color: #555;
+        background-color: #ed913f;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        margin: 20px auto;
+        font-size: 1.25em;
+        font-family: "Imprima", sans-serif;
+    }
+
+    .yellow-button:hover {
+        cursor: pointer;
+    }
+
+    .input-style {
+        height: 40px;
+        width: 100%;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        text-align: center;
+        color: #555;
+        font-size: 1.15em;
+        font-family: "Imprima", sans-serif;
+    }
+
+    .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .form-row label {
+        width: 200px; /* Adjust as needed */
+        text-align: right;
+        margin-right: 20px; /* Adjust as needed */
+    }
+
+    .time-input {
+        display: flex;
+        align-items: center;
+    }
+
+    .time-input select {
+        margin-right: 5px;
+    }
+
+
+  .blue {
+    color: #aacde9;
+  }
+
+  .error {
+    color: palevioletred;
+    font-size: 1.5em;
+    font-family: "Imprima", sans-serif;
+    width: 100% !important;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .green {
+    color: palegreen;
+  }
+
+  .yellow {
+    color: #fff1aa;
+  }
+
+  .disabled {
+    background-color: #c6c2c2;
+    cursor: default;
+  }
+

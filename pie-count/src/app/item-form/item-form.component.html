@@ -1,0 +1,71 @@
+<div class="container">
+    <div>
+        <h2>Add items</h2>
+        <form class="form-box" [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+        <label for="add-large">Add large pie: </label>
+        <select name="add-large" class="input-style" formControlName="largePie">
+            <option value="undefined">Select flavor</option>
+            @for (flavor of flavors; track flavor.name) {
+                <option
+                value="largeFlavor">
+                {{flavor.name}}</option>
+            }
+
+        </select>
+        <button class="yellow-button">Add</button>
+        </div>
+        <div class="form-row">
+            <label for="add-double">Add double-crust pie: </label>
+            <select name="add-double" class="input-style" formControlName="doublePie">
+                <option value="undefined">Select flavor</option>
+                @for (flavor of bigFlavors; track flavor.name) {
+                    <option
+                    value="largeFlavor">
+                    {{flavor.name}}</option>
+                }
+            </select>
+            <button class="yellow-button">Add</button>
+        </div>
+        <div class="form-row">
+            <label for="add-fourpack-1">Add fourpack: </label>
+            <select name="add-fourpack-1" class="input-style" formControlName="fourpackFlavor1">
+                <option value="undefined">Select flavor 1</option>
+                @for (flavor of flavors; track flavor.name) {
+                    <option
+                    value="largeFlavor">
+                    {{flavor.name}}</option>
+                }
+            </select>
+            <label for="add-fourpack-2"></label>
+            <select name="add-fourpack-2" class="input-style" formControlName="fourpackFlavor2">
+                <option value="undefined">Select flavor 2</option>
+                @for (flavor of flavors; track flavor.name) {
+                    <option
+                    value="largeFlavor">
+                    {{flavor.name}}</option>
+                }
+            </select>
+            <label for="add-fourpack-3"></label>
+            <select name="add-fourpack-3" class="input-style" formControlName="fourpackFlavor3">
+                <option value="undefined">Select flavor 3</option>
+                @for (flavor of flavors; track flavor.name) {
+                    <option
+                    value="largeFlavor">
+                    {{flavor.name}}</option>
+                }
+            </select>
+            <label for="add-fourpack-4"></label>
+            <select name="add-fourpack-4" class="input-style" formControlName="fourpackFlavor4">
+                <option value="undefined">Select flavor 4</option>
+                @for (flavor of flavors; track flavor.name) {
+                    <option
+                    value="largeFlavor">
+                    {{flavor.name}}</option>
+                }
+            </select>
+            <button class="yellow-button">Add</button>
+        </div>
+        </form>
+    </div>
+</div>

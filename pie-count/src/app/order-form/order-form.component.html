@@ -1,0 +1,64 @@
+<div class="container">
+    <div>
+        <h1>New Order</h1>
+        <form class="form-box" [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+            <label for="order-name">Name: </label>
+            <input type="text" name="order-name" class="input-style" formControlName="orderName">
+        </div>
+        <ng-container
+                *ngIf="orderForm.controls['orderName'].touched && orderForm.controls['orderName'].errors">
+                <div *ngIf="orderForm.controls['orderName'].errors['required']" class="error">Name is required</div>
+            </ng-container>
+        <div class="form-row">
+            <label for="order-number">Phone # / Shopify order #: </label>
+            <input type="text" name="order-number" class="input-style" formControlName="orderNumber">
+        </div>
+        <ng-container
+                *ngIf="orderForm.controls['orderNumber'].touched && orderForm.controls['orderNumber'].errors">
+                <div *ngIf="orderForm.controls['orderNumber'].errors['minlength']" class="error">Order Number must be at least 4 digits</div>
+                <div *ngIf="orderForm.controls['orderNumber'].errors['maxlength']" class="error">Order Number cannot be more than 10 characters</div>
+            </ng-container><div class="form-row">
+            <label for="order-date">Pickup date: </label>
+            <select name="order-date" class="input-style" formControlName="orderDate">
+                <option disabled [ngValue]="null" selected>Select day</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+            </select>
+            <ng-container
+                *ngIf="orderForm.controls['orderDate'].touched && orderForm.controls['orderDate'].errors">
+                <div *ngIf="orderForm.controls['orderDate'].errors['required']" class="error">Order Date is required</div>
+            </ng-container>
+        </div>
+            <div class="form-row time-input">
+            <label for="order-time-hour">Pickup time: </label>
+            <select name="order-time-hour" class="input-style" formControlName="orderTimeHour">
+                <option disabled [ngValue]="null" selected>Hour</option>
+                <option value="10:">10</option>
+                <option value="11:">11</option>
+                <option value="12:">12</option>
+                <option value="13:">1</option>
+                <option value="14:">2</option>
+                <option value="15:">3</option>
+                <option value="16:">4</option>
+                <option value="17:">5</option>
+                <option value="18:">6</option>
+            </select>
+            <label for="order-time-minute"></label>
+            <select name="order-time-minute" class="input-style" formControlName="orderTimeMinute">
+                <option value="00" selected>00</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+                <option value="45">45</option>
+            </select>
+        </div>
+            <button class="yellow-button" [disabled]="orderForm.invalid"
+            [ngClass]="orderForm.invalid ? 'disabled' : ''">Save</button>
+        </form>
+    </div>
+</div>
