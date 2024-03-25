@@ -36,4 +36,7 @@ export class OrderService {
         return this.http.get<Product[]>('http://localhost:8080/large');
     }
 
+    createOrder(order:Order) {
+        return this.http.post<Order>('http://localhost:8080/orders', order)
+    }
 }

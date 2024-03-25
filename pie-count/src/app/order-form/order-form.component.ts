@@ -43,6 +43,9 @@ export class OrderFormComponent{
       };
 
     this.orderData.updateOrder(order);
+    this.orderData.createOrder(order).subscribe(response => {
+      console.log(response)
+    })
     this.router.navigateByUrl('/additem');
     } else {
       // error handling
