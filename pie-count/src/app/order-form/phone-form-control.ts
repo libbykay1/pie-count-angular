@@ -6,9 +6,6 @@ export class PhoneFormControl extends FormControl {
             return super.setValue('', { ...options, emitModelToViewChange: true })
         }
 
-        console.log(`Typed Value:  ${value} \n Typed value length: ${value.length}`)
-        console.log(`Current value: ${this.value} \n Current value length: ${this.value.length}`)
-
         if (!value.match(/^(?=.*[0-9])[-()0-9]+$/) || value.length > 13) {
             return super.setValue(this.value, {...options, emitModelToViewChange: true})
         }

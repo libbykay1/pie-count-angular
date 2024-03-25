@@ -1,31 +1,32 @@
 <div class="container">
-    <div>
+
+
+    <div><button routerLink="/neworder" class="yellow-button">New order</button>
         <h2>Add items</h2>
-        <form class="form-box" [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+<div class="item-container">
+        <form class="form-box item-form-box" [formGroup]="itemForm" (ngSubmit)="onSubmit()">
             <div class="form-row">
         <label for="add-large">Add large pie: </label>
-        <select name="add-large" class="input-style" formControlName="largePie">
-            <option value="undefined">Select flavor</option>
-            @for (flavor of flavors; track flavor.name) {
-                <option
-                value="largeFlavor">
-                {{flavor.name}}</option>
-            }
-
+        <select name="add-large" class="input-style" formControlName="largePie" (change)="addLargePie()">
+            <option value="undefined" selected disabled>Select flavor</option>
+            <ng-container *ngFor="let flavor of largePies; trackBy: trackByFn">
+                <option [value]="flavor._id" >{{ flavor.name }}</option>
+            </ng-container>
         </select>
-        <button class="yellow-button">Add</button>
+
+
         </div>
         <div class="form-row">
             <label for="add-double">Add double-crust pie: </label>
-            <select name="add-double" class="input-style" formControlName="doublePie">
+            <select name="add-double" class="input-style" formControlName="doublePie" >
                 <option value="undefined">Select flavor</option>
                 @for (flavor of bigFlavors; track flavor.name) {
                     <option
-                    value="largeFlavor">
+                    value="flavor.id">
                     {{flavor.name}}</option>
                 }
             </select>
-            <button class="yellow-button">Add</button>
+
         </div>
         <div class="form-row">
             <label for="add-fourpack-1">Add fourpack: </label>
@@ -64,8 +65,33 @@
                     {{flavor.name}}</option>
                 }
             </select>
-            <button class="yellow-button">Add</button>
+
         </div>
-        </form>
+        <button class="yellow-button">Save</button>
+        </form><div class="form-box">
+            <h4>Name: {{orderName}}</h4>
+            <h4>Order # / phone #: {{orderNumber}}</h4>
+            <h4>Pickup: {{orderDate}}, {{orderTimeHour}}{{orderTimeMinute}}</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+            @for (item of items; track item.itemName) {
+                <tr>
+                    <td>{{item.itemName}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.amount}}</td>
+                    <td>{{item.price * item.amount}}</td>
+                </tr>
+            }    </tbody></table>
+        </div>
     </div>
+    </div>
+
 </div>

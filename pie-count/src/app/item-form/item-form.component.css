@@ -1,0 +1,7 @@
+.item-container {
+    display: flex;
+    flex-direction: row;
+}
+.item-form-box {
+    width: 50%
+}
